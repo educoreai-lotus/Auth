@@ -1,0 +1,137 @@
+{
+  "project": "auth-microservice",
+  "version": "0.1.0",
+  "description": "Development roadmap for Auth Microservice",
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Init repo & monorepo structure",
+      "status": "In-Progress",
+      "owner": "devops",
+      "deps": [],
+      "phase": 1
+    },
+    {
+      "id": "t2",
+      "title": "OAuth2 login flow (Google, GitHub, LinkedIn)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t1"],
+      "phase": 3
+    },
+    {
+      "id": "t3",
+      "title": "JWT issuance (15-min RS256, stateless)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t2"],
+      "phase": 3
+    },
+    {
+      "id": "t4",
+      "title": "Silent re-authentication endpoint",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t2"],
+      "phase": 3
+    },
+    {
+      "id": "t5",
+      "title": "MFA – TOTP + WebAuthn (setup/verify)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t3"],
+      "phase": 3
+    },
+    {
+      "id": "t6",
+      "title": "Secure cookie handling & logout",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t3"],
+      "phase": 3
+    },
+    {
+      "id": "t7",
+      "title": "Audit logs (MongoDB, append-only)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t3"],
+      "phase": 2
+    },
+    {
+      "id": "t8",
+      "title": "Frontend login pages + silent-refresh logic",
+      "status": "Planned",
+      "owner": "frontend",
+      "deps": ["t2", "t3", "t6"],
+      "phase": 4
+    },
+    {
+      "id": "t9",
+      "title": "Integration with Coordinator (user lookup)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t2"],
+      "phase": 5
+    },
+    {
+      "id": "t10",
+      "title": "Rate limiting config at API Gateway",
+      "status": "Planned",
+      "owner": "devops",
+      "deps": ["t1"],
+      "phase": 3
+    },
+    {
+      "id": "t11",
+      "title": "JWKS endpoint (.well-known/jwks.json)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t3"],
+      "phase": 3
+    },
+    {
+      "id": "t12",
+      "title": "AI anomaly detection (lightweight)",
+      "status": "Planned",
+      "owner": "backend",
+      "deps": ["t7"],
+      "phase": 3
+    },
+    {
+      "id": "t13",
+      "title": "Design config system (design-config.local.json)",
+      "status": "Planned",
+      "owner": "frontend",
+      "deps": ["t8"],
+      "phase": 4
+    },
+    {
+      "id": "t14",
+      "title": "Comprehensive test suite (≥80% coverage)",
+      "status": "Planned",
+      "owner": "qa",
+      "deps": ["t2", "t3", "t5", "t6", "t8"],
+      "phase": 6
+    },
+    {
+      "id": "t15",
+      "title": "Security audit & penetration testing",
+      "status": "Planned",
+      "owner": "security",
+      "deps": ["t14"],
+      "phase": 6
+    }
+  ],
+  "phases": {
+    "1": "Planning & Design",
+    "2": "Database Setup",
+    "3": "Backend Development",
+    "4": "Frontend Development",
+    "5": "Integration",
+    "6": "Testing & Security",
+    "7": "Deployment & Monitoring"
+  }
+}
+
